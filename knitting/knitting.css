@@ -1,6 +1,11 @@
+* {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif
+}
+
 #knitting {
     padding: 16px 0;
 }
+
 #drawboard-wrapper {
     width: 100%;
 }

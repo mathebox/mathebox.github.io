@@ -117,6 +117,15 @@
                 'fill': '#428bca',
                 'stroke': 0
             });
+
+            paper.text(realWidth/2-(width/2*ratio)+a*ratio/2, realHeight/2+(height/2*ratio)-30, "a").attr({
+                'font-size': 50,
+                'fill': '#fff'
+            })
+            paper.text(realWidth/2+(width/2*ratio)-a*ratio-b*ratio*Math.cos(alpha)/2+30, realHeight/2+(height/2*ratio)-b*ratio*Math.sin(alpha)/2, "b").attr({
+                'font-size': 50,
+                'fill': '#fff'
+            })
         }
 
         function calculatePerimeter(width, height, a, b) {
