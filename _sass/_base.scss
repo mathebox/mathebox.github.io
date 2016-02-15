@@ -19,65 +19,38 @@ ul, ol, dl, figure,
     }
 }
 
-// dark
-$main-color:        #E9F2F5;
-$main-color-25:     #606263;
-$main-color-50:     #8E9294;
-$main-color-75:     #BBC2C4;
-$main-color-red:    255;
-$main-color-green:  255;
-$main-color-blue:   255;
-$background-color:  #333333;
-$shadow-alpha: 0.5;
-
-
 // light
 $main-color:        #046D8B;
-$main-color-25:     #B9D3D8;
-$main-color-50:     #7DB1C0;
-$main-color-75:     #408FA5;
-$main-color-red:    4;
-$main-color-green:  109;
-$main-color-blue:   139;
 $background-color:  #F6F6F6;
 $shadow-alpha: 0.15;
 
-$circle-md: 120px;
-$circle-lg: 300px;
+$circle-width-md: 120px;
+$circle-width-lg: 300px;
 
 
 div.circle {
-  width: $circle-md;
-  height: $circle-md;
-  -webkit-border-radius: $circle-md/2;
-  -moz-border-radius: $circle-md/2;
-  border-radius: $circle-md/2;
+  width: $circle-width-md;
+  height: $circle-width-md;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
   background-color: $main-color;
   border: 1px solid $main-color;
   -moz-box-shadow:    0 1px 3px rgba(0,0,0, $shadow-alpha);
   -webkit-box-shadow: 0 1px 3px rgba(0,0,0, $shadow-alpha);
   box-shadow:         0 1px 3px rgba(0,0,0, $shadow-alpha);
 
+  &.circle-large {
+    width: $circle-width-lg;
+    height: $circle-width-lg;
+  }
+
   i {
-  font-size: 4em;
-  line-height: 2.1em;
+    font-size: 4em;
+    line-height: 2.1em;
     color: $background-color;
     text-shadow: none; /* Prevent inheritence from `body` */
   }
-
-  i.lg {
-    font-size: 5.5em;
-    line-height: 1.55em;
-    color: $background-color;
-  }
-}
-
-div.circle.circle-large {
-  width: $circle-lg;
-  height: $circle-lg;
-  -webkit-border-radius: $circle-lg/2;
-  -moz-border-radius: $circle-lg/2;
-  border-radius: $circle-lg/2;
 
   img {
     margin-top: -1px;
@@ -103,7 +76,7 @@ h1 {
 div#external-links {
   padding-top: 16px;
 
-  > div {
+  & > div {
     padding-bottom: 24px;
   }
 
@@ -116,9 +89,9 @@ div#external-links {
   }
 
   a:hover, a:focus {
-    > div.circle {
-      background-color: $main-color-75;
-      border: 1px solid $main-color-75;
+    & > div.circle {
+      background-color: rgba(red($main-color), green($main-color), blue($main-color),.75);
+      border: 1px solid rgba(red($main-color), green($main-color), blue($main-color),.75);
     }
   }
 }
@@ -205,15 +178,15 @@ body {
   padding-left: 0;
   font-size: 16px;
   font-weight: bold;
-  color: $main-color-75; /* IE8 proofing */
-  color: rgba($main-color-red, $main-color-green, $main-color-blue, .75);
+  color: mix($main-color, $background-color, 25%); /* IE8 proofing */
+  color: rgba(red($main-color), green($main-color), blue($main-color), .75);
   border-bottom: 2px solid transparent;
 }
 .masthead-nav > li > a:hover,
 .masthead-nav > li > a:focus {
   background-color: transparent;
-  border-bottom-color: $main-color-25;
-  border-bottom-color: rgba($main-color-red, $main-color-green, $main-color-blue,.25);
+  border-bottom-color: mix($main-color, $background-color, 75%);
+  border-bottom-color: rgba(red($main-color), green($main-color), blue($main-color),.25);
 }
 .masthead-nav > .active > a,
 .masthead-nav > .active > a:hover,
@@ -261,8 +234,8 @@ body {
  */
 
 .mastfoot {
-  color: $main-color-50; /* IE8 proofing */
-  color: rgba($main-color-red, $main-color-green, $main-color-blue,.5);
+  color: mix($main-color, $background-color, 50%); /* IE8 proofing */
+  color: rgba(red($main-color), green($main-color), blue($main-color),.5);
 }
 
 .footer, .push {
