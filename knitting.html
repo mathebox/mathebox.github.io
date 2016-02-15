@@ -1,159 +1,128 @@
-<html>
+---
+layout: clean
+---
 
-<head>
-    <title>Knitting</title>
-    <meta charset="utf-8">
-    <meta name="keywords" content="Developer,Software,Engineering,iOS,mobile,Potsdam,Berlin,Hasso-Plattner-Institut,Hasso-Plattner-Institute,HTML5,JavaScript,Python,Programming,Development,Research">
-    <meta name="author" content="Max Bothe">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/manifest.json">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
-    <meta name="theme-color" content="#ffffff">
-
-    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="knitting/knitting.css">
-    <script type="text/javascript" src="bower_components/raphael/raphael-min.js"></script>
-</head>
-
-<body>
-    <div id="knitting" class="container">
-        <div class="row">
-            <div class="col-md-8">
-                <div id="drawboard-wrapper">
-                    <div id="drawboard"></div>
-                </div>
+<div id="knitting" class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <div id="drawboard-wrapper">
+                <div id="drawboard"></div>
             </div>
-            <div class="col-md-4">
-                <div class="well">
-                    <form>
-                        <div class="form-group">
-                            <div class="input-group">
-                                <span class="input-group-addon"><b>Höhe</b></span>
-                                <input id="height" type="number" class="form-control input-change" placeholder="Höhe" min="1" step="0.5" value="50" aria-describedby="height-addon">
-                                <span class="input-group-addon" id="height-addon">cm</span>
-                            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="well">
+                <form>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon"><b>Höhe</b></span>
+                            <input id="height" type="number" class="form-control input-change" placeholder="Höhe" min="1" step="0.5" value="50" aria-describedby="height-addon">
+                            <span class="input-group-addon" id="height-addon">cm</span>
                         </div>
-                        <div class="form-group">
-                            <div class="input-group">
-                                <span class="input-group-addon"><b>Breite</b></span>
-                                <input id="width" type="number" class="form-control input-change" placeholder="Breite" min="1" step="0.5" value="40" aria-describedby="width-addon">
-                                <span class="input-group-addon" id="width-addon">cm</span>
-                            </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon"><b>Breite</b></span>
+                            <input id="width" type="number" class="form-control input-change" placeholder="Breite" min="1" step="0.5" value="40" aria-describedby="width-addon">
+                            <span class="input-group-addon" id="width-addon">cm</span>
                         </div>
-                    </form>
-                </div>
-                <div class="well">
-                    <form>
-                        <div class="form-group">
-                            <div class="input-group">
-                                <span class="input-group-addon"><b>a</b></span>
-                                <input id="side-a" type="number" class="form-control input-change" placeholder="a" min="1" step="0.5" value="9" aria-describedby="side-a-addon">
-                                <span class="input-group-addon" id="side-a-addon">cm</span>
-                            </div>
+                    </div>
+                </form>
+            </div>
+            <div class="well">
+                <form>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon"><b>a</b></span>
+                            <input id="side-a" type="number" class="form-control input-change" placeholder="a" min="1" step="0.5" value="9" aria-describedby="side-a-addon">
+                            <span class="input-group-addon" id="side-a-addon">cm</span>
                         </div>
-                        <div class="form-group">
-                            <div class="input-group">
-                                <span class="input-group-addon"><b>b</b></span>
-                                <input id="side-b" type="number" class="form-control input-change" placeholder="b" min="1" step="0.5" value="10" aria-describedby="side-b-addon">
-                                <span class="input-group-addon" id="side-b-addon">cm</span>
-                            </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon"><b>b</b></span>
+                            <input id="side-b" type="number" class="form-control input-change" placeholder="b" min="1" step="0.5" value="10" aria-describedby="side-b-addon">
+                            <span class="input-group-addon" id="side-b-addon">cm</span>
                         </div>
-                    </form>
-                </div>
-                <div class="well">
-                    <p id="perimeter"></p>
-                </div>
+                    </div>
+                </form>
+            </div>
+            <div class="well">
+                <p id="perimeter"></p>
             </div>
         </div>
     </div>
+</div>
 
-    <script>
-        var realWidth = 1000;
-        var realHeight = 1000;
-        var paper = new Raphael('drawboard');
-        var svg = paper.canvas;
+<script type="text/javascript" src="{{ 'bower_components/raphael/raphael-min.js' | prepend: site.baseurl }}"></script>
+<script>
+    var realWidth = 1000;
+    var realHeight = 1000;
+    var paper = new Raphael('drawboard');
+    var svg = paper.canvas;
 
-        svg.setAttribute('viewBox', '0 0 ' + realWidth + ' ' + realHeight);
-        svg.removeAttribute('width');
-        svg.removeAttribute('height');
+    svg.setAttribute('viewBox', '0 0 ' + realWidth + ' ' + realHeight);
+    svg.removeAttribute('width');
+    svg.removeAttribute('height');
 
-        function drawA(width, height, a, b) {
-            paper.clear();
+    function drawA(width, height, a, b) {
+        paper.clear();
 
-            var ratio = realWidth/Math.max(width, height);
-            var alpha = Math.atan(2*height/width);
-            // big shape
-            var d = `M ${realWidth/2-(width/2*ratio)},${realHeight/2+(height/2*ratio)}`;
-            d += ` L ${realWidth/2-(width/2*ratio)+a*ratio},${realHeight/2+(height/2*ratio)}`;
-            d += ` L ${realWidth/2-(width/2*ratio)+a*ratio+b*ratio*Math.cos(alpha)},${realHeight/2+(height/2*ratio)-b*ratio*Math.sin(alpha)}`;
-            d += ` L ${realWidth/2+(width/2*ratio)-a*ratio-b*ratio*Math.cos(alpha)},${realHeight/2+(height/2*ratio)-b*ratio*Math.sin(alpha)}`;
-            d += ` L ${realWidth/2+(width/2*ratio)-a*ratio},${realHeight/2+(height/2*ratio)}`;
-            d += ` L ${realWidth/2+(width/2*ratio)},${realHeight/2+(height/2*ratio)}`;
-            d += ` L ${realWidth/2},${realHeight/2-(height/2*ratio)}`;
-            d += `z`;
+        var ratio = realWidth/Math.max(width, height);
+        var alpha = Math.atan(2*height/width);
+        // big shape
+        var d = `M ${realWidth/2-(width/2*ratio)},${realHeight/2+(height/2*ratio)}`;
+        d += ` L ${realWidth/2-(width/2*ratio)+a*ratio},${realHeight/2+(height/2*ratio)}`;
+        d += ` L ${realWidth/2-(width/2*ratio)+a*ratio+b*ratio*Math.cos(alpha)},${realHeight/2+(height/2*ratio)-b*ratio*Math.sin(alpha)}`;
+        d += ` L ${realWidth/2+(width/2*ratio)-a*ratio-b*ratio*Math.cos(alpha)},${realHeight/2+(height/2*ratio)-b*ratio*Math.sin(alpha)}`;
+        d += ` L ${realWidth/2+(width/2*ratio)-a*ratio},${realHeight/2+(height/2*ratio)}`;
+        d += ` L ${realWidth/2+(width/2*ratio)},${realHeight/2+(height/2*ratio)}`;
+        d += ` L ${realWidth/2},${realHeight/2-(height/2*ratio)}`;
+        d += `z`;
 
-            // small hole
-            d += `M ${realWidth/2},${realHeight/2-(height/2*ratio)+a*ratio*Math.tan(alpha)}`
-            d +=` L ${realWidth/2+(width/2*ratio)-a*ratio-((b*Math.sin(alpha)+a*Math.sin(alpha))/Math.tan(alpha)*ratio)},${realHeight/2+(height/2*ratio)-b*ratio*Math.sin(alpha)-a*ratio*Math.sin(alpha)}`;
-            d += ` L ${realWidth/2-(width/2*ratio)+a*ratio+((b*Math.sin(alpha)+a*Math.sin(alpha))/Math.tan(alpha)*ratio)},${realHeight/2+(height/2*ratio)-b*ratio*Math.sin(alpha)-a*ratio*Math.sin(alpha)}`;
-            d += `z`;
-            p = paper.path(d);
-            p.attr({
-                'fill': '#428bca',
-                'stroke': 0
-            });
-
-            paper.text(realWidth/2-(width/2*ratio)+a*ratio/2, realHeight/2+(height/2*ratio)-30, "a").attr({
-                'font-size': 50,
-                'fill': '#fff'
-            })
-            paper.text(realWidth/2+(width/2*ratio)-a*ratio-b*ratio*Math.cos(alpha)/2+30, realHeight/2+(height/2*ratio)-b*ratio*Math.sin(alpha)/2, "b").attr({
-                'font-size': 50,
-                'fill': '#fff'
-            })
-        }
-
-        function calculatePerimeter(width, height, a, b) {
-            var alpha = Math.atan(2*height/width);
-            var c = Math.sqrt(height*height + width*width);
-            var d = width-2*(a+Math.cos(alpha)*b)
-            var f = width-2*(a+(b*Math.sin(alpha)+a*Math.sin(alpha))/Math.tan(alpha))
-            var e = Math.sqrt(Math.pow(height-b*Math.sin(alpha)-a*Math.sin(alpha)-a*Math.tan(alpha), 2) + Math.pow(f/2, 2));
-            var perimeter1 = (2*(a+b+c)+d).toFixed(1);
-            var perimeter2 = (2*e+f).toFixed(1);
-            document.getElementById('perimeter').innerHTML = `Umfang 1: ${perimeter1}cm<br/>Umfang 2: ${perimeter2}cm`;
-        }
-
-        function recalculate() {
-            var height = parseFloat(document.getElementById('height').value);
-            var width = parseFloat(document.getElementById('width').value);
-            var a = parseFloat(document.getElementById('side-a').value);
-            var b = parseFloat(document.getElementById('side-b').value);
-            drawA(width, height, a, b);
-            calculatePerimeter(width, height, a, b);
-        }
-
-        var elements = document.getElementsByClassName("input-change")
-        Array.prototype.forEach.call(elements, function(el, idx, arr) {
-            el.addEventListener("change", recalculate, false);
+        // small hole
+        d += `M ${realWidth/2},${realHeight/2-(height/2*ratio)+a*ratio*Math.tan(alpha)}`
+        d +=` L ${realWidth/2+(width/2*ratio)-a*ratio-((b*Math.sin(alpha)+a*Math.sin(alpha))/Math.tan(alpha)*ratio)},${realHeight/2+(height/2*ratio)-b*ratio*Math.sin(alpha)-a*ratio*Math.sin(alpha)}`;
+        d += ` L ${realWidth/2-(width/2*ratio)+a*ratio+((b*Math.sin(alpha)+a*Math.sin(alpha))/Math.tan(alpha)*ratio)},${realHeight/2+(height/2*ratio)-b*ratio*Math.sin(alpha)-a*ratio*Math.sin(alpha)}`;
+        d += `z`;
+        p = paper.path(d);
+        p.attr({
+            'fill': '#428bca',
+            'stroke': 0
         });
-        recalculate();
-    </script>
-</body>
 
-</html>
+        paper.text(realWidth/2-(width/2*ratio)+a*ratio/2, realHeight/2+(height/2*ratio)-30, "a").attr({
+            'font-size': 50,
+            'fill': '#fff'
+        })
+        paper.text(realWidth/2+(width/2*ratio)-a*ratio-b*ratio*Math.cos(alpha)/2+30, realHeight/2+(height/2*ratio)-b*ratio*Math.sin(alpha)/2, "b").attr({
+            'font-size': 50,
+            'fill': '#fff'
+        })
+    }
+
+    function calculatePerimeter(width, height, a, b) {
+        var alpha = Math.atan(2*height/width);
+        var c = Math.sqrt(height*height + width*width);
+        var d = width-2*(a+Math.cos(alpha)*b)
+        var f = width-2*(a+(b*Math.sin(alpha)+a*Math.sin(alpha))/Math.tan(alpha))
+        var e = Math.sqrt(Math.pow(height-b*Math.sin(alpha)-a*Math.sin(alpha)-a*Math.tan(alpha), 2) + Math.pow(f/2, 2));
+        var perimeter1 = (2*(a+b+c)+d).toFixed(1);
+        var perimeter2 = (2*e+f).toFixed(1);
+        document.getElementById('perimeter').innerHTML = `Umfang 1: ${perimeter1}cm<br/>Umfang 2: ${perimeter2}cm`;
+    }
+
+    function recalculate() {
+        var height = parseFloat(document.getElementById('height').value);
+        var width = parseFloat(document.getElementById('width').value);
+        var a = parseFloat(document.getElementById('side-a').value);
+        var b = parseFloat(document.getElementById('side-b').value);
+        drawA(width, height, a, b);
+        calculatePerimeter(width, height, a, b);
+    }
+
+    var elements = document.getElementsByClassName("input-change")
+    Array.prototype.forEach.call(elements, function(el, idx, arr) {
+        el.addEventListener("change", recalculate, false);
+    });
+    recalculate();
+</script>

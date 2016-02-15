@@ -1,4 +1,9 @@
-# Sass
+_site
 .sass-cache
-*.css.map
+.jekyll-metadata
 
+# Bower (allow used components)
+bower_components
+!/bower_components/bootstrap/dist/css/bootstrap.min.css
+!/bower_components/font-awesome/css/font-awesome.min.css
+!/bower_components/raphael/raphael-min.js

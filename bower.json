@@ -1,0 +1,23 @@
+{
+  "name": "mathebox.github.io",
+  "homepage": "https://github.com/mathebox/mathebox.github.io",
+  "authors": [
+    "Max Bothe <mathebox@gmail.com>"
+  ],
+  "description": "personal website",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.6",
+    "font-awesome": "fontawesome#^4.5.0",
+    "raphael": "^2.1.4"
+  }
+}

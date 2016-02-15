@@ -1,0 +1,21 @@
+#knitting {
+    padding: 16px 0;
+}
+
+#drawboard-wrapper {
+    width: 100%;
+}
+
+#drawboard-wrapper:before {
+    content: "";
+    display: block;
+    padding-top: 100%;
+}
+
+#drawboard {
+    position: absolute;
+    top: 0px;
+    bottom: 90px;
+    left: 60px;
+    right: 60px;
+}
