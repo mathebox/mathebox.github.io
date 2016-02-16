@@ -67,14 +67,26 @@ h1 {
 }
 
 .cover {
-  div.persona p {
-    text-align: right;
-    font-size: 1.5em;
+  margin: 0 auto;
+
+  div.persona {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    p {
+      text-align: right;
+      font-size: 1.5em;
+    }
   }
 }
 
 div#external-links {
   padding-top: 16px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
 
   & > div {
     padding-bottom: 24px;
@@ -82,10 +94,6 @@ div#external-links {
 
   div.circle {
     margin: auto;
-  }
-
-  div:last-of-type i.fa-university {
-    margin-right: -2px;
   }
 
   a:hover, a:focus {
@@ -251,11 +259,6 @@ body {
 
 // xs
 @media (max-width: 768px) {
-  .no-margin-padding-xs {
-    margin: 0;
-    padding: 0;
-  }
-
   h1 {
     font-size: 4em;
     text-align: center;
@@ -267,14 +270,23 @@ body {
 
   div#external-links {
     padding-top: 32px;
+    justify-content: space-around;
+
+    & > div {
+      margin: 0 8px;
+    }
   }
 
   .cover {
     padding: 0;
 
-    div.persona p {
-      text-align: center;
 
+    div.persona {
+      flex-direction: column;
+
+      p {
+        text-align: center;
+      }
     }
   }
 
