@@ -41,8 +41,11 @@ div.circle {
   box-shadow:         0 1px 3px rgba(0,0,0, $shadow-alpha);
 
   &.circle-large {
+    margin: auto;
+    margin-bottom: 15px;
     width: $circle-width-lg;
     height: $circle-width-lg;
+
   }
 
   i {
@@ -60,22 +63,32 @@ div.circle {
   }
 }
 
-h1 {
-  font-size: 6em;
-  text-align: right;
-  margin-top: 0px;
-}
-
 .cover {
   margin: 0 auto;
+  padding: 8px;
+  padding-top: 57px;
+  min-height: calc(100% - 166px);
+  height: calc(100% - 166px);
+  display: table;
+
+  .cover-wrapper {
+    display: table-cell;
+    vertical-align: middle;
+  }
 
   div.persona {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
 
+    h1 {
+      font-size: 4em;
+      text-align: center;
+      margin-top: 0px;
+    }
+
     p {
-      text-align: right;
+      text-align: center;
       font-size: 1.5em;
     }
   }
@@ -86,10 +99,11 @@ div#external-links {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-around;
 
   & > div {
     padding-bottom: 24px;
+    margin: 0 8px;
   }
 
   div.circle {
@@ -139,6 +153,7 @@ body {
   color: $main-color;
   text-align: center;
   text-shadow: 0 1px 3px rgba(0,0,0, $shadow-alpha);
+  font-weight: 300;
 }
 
 /* Extra markup and styles for table-esque vertical and horizontal centering */
@@ -163,149 +178,93 @@ body {
 
 /* Padding for spacing */
 .inner {
-  padding: 30px;
+  padding: 0 16px;
 }
 
+
+.masthead,
+.mastfoot,
+.cover,
+.cover-container {
+  width: 100%;
+}
+
+.masthead {
+  position: fixed;
+  border-bottom: 1px solid #ccc;
+  background-color: #f6f6f6;
+  z-index: 20;
+}
 
 /*
  * Header
  */
-.masthead-brand {
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
-.masthead-nav > li {
-  display: inline-block;
-}
-.masthead-nav > li + li {
-  margin-left: 20px;
-}
-.masthead-nav > li > a {
-  padding-right: 0;
-  padding-left: 0;
-  font-size: 16px;
-  font-weight: bold;
-  color: mix($main-color, $background-color, 25%); /* IE8 proofing */
-  color: rgba(red($main-color), green($main-color), blue($main-color), .75);
-  border-bottom: 2px solid transparent;
-}
-.masthead-nav > li > a:hover,
-.masthead-nav > li > a:focus {
-  background-color: transparent;
-  border-bottom-color: mix($main-color, $background-color, 75%);
-  border-bottom-color: rgba(red($main-color), green($main-color), blue($main-color),.25);
-}
-.masthead-nav > .active > a,
-.masthead-nav > .active > a:hover,
-.masthead-nav > .active > a:focus {
-  color: $main-color;
-  border-bottom-color: $main-color;
-}
-
-@media (min-width: 768px) {
-  .masthead-brand {
-    float: left;
-  }
-  .masthead-nav {
-    float: right;
-  }
-}
-
-
-/*
- * Cover
- */
-
-.cover {
-  padding: 0 20px;
-
-  min-height: calc(100% - 164px);
-  height: calc(100% - 164px);
-  // margin: 0 auto -150px;
-
-  display: table;
-}
-.cover .btn-lg {
-  padding: 10px 20px;
-  font-weight: bold;
-}
-
-.cover-wrapper {
-  display: table-cell;
-  vertical-align: middle;
-}
-
-
-/*
- * Footer
- */
-
 .mastfoot {
   color: mix($main-color, $background-color, 50%); /* IE8 proofing */
   color: rgba(red($main-color), green($main-color), blue($main-color),.5);
 }
 
 .footer, .push {
-  height: 90px;
+  height: 36px;
+
+  p {
+    margin: 0;
+  }
 }
 
+.masthead-brand {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  float: left;
+}
 
-/*
- * Affix and center
- */
+.masthead-nav {
+  float: right;
+  margin-top: 4px;
 
+  & > li {
+    display: inline-block;
 
+    a {
+      padding-right: 0;
+      padding-left: 0;
+      font-size: 16px;
+      font-weight: bold;
+      color: mix($main-color, $background-color, 25%); /* IE8 proofing */
+      color: rgba(red($main-color), green($main-color), blue($main-color), .75);
+      border-bottom: 2px solid transparent;
 
-// xs
-@media (max-width: 768px) {
-  h1 {
-    font-size: 4em;
-    text-align: center;
-  }
-
-  div.circle.circle-large {
-    margin: auto;
-  }
-
-  div#external-links {
-    padding-top: 32px;
-    justify-content: space-around;
-
-    & > div {
-      margin: 0 8px;
+      &:hover, &:focus {
+        background-color: transparent;
+        border-bottom-color: mix($main-color, $background-color, 75%);
+        border-bottom-color: rgba(red($main-color), green($main-color), blue($main-color),.25);
+      }
     }
-  }
 
-  .cover {
-    padding: 0;
-
-
-    div.persona {
-      flex-direction: column;
-
-      p {
-        text-align: center;
+    & > .active {
+      a, a:hover, a:focus {
+        color: $main-color;
+        border-bottom-color: $main-color;
       }
     }
   }
 
-  .cover-wrapper {
-    padding-top: 0;
+  & > li + li {
+    margin-left: 20px;
   }
 }
 
 // sm
 @media (min-width: 768px) {
-  /* Pull out the header and footer */
-  // .masthead {
-  //   position: fixed;
-  //   top: 0;
-  // }
-  // .mastfoot {
-  //   position: fixed;
-  //   bottom: 0;
-  // }
+  .masthead {
+    position: relative;
+    border-bottom: None;
+    background-color: transparent;
+  }
+
+  .inner {
+    padding: 30px;
+  }
   /* Start the vertical centering */
   .site-wrapper-inner {
     vertical-align: middle;
@@ -313,8 +272,13 @@ body {
   /* Handle the widths */
   .masthead,
   .mastfoot,
+  .cover,
   .cover-container {
     width: 700px; /* Must be percentage or pixels for horizontal alignment */
+  }
+
+  .masthead-nav {
+    margin-top: 2px;
   }
 
   div.circle.circle-large {
@@ -323,27 +287,32 @@ body {
 
   div#external-links {
     padding-top: 16px;
+    justify-content: space-between;
+
+    & > div {
+      margin: 0;
+    }
   }
 
-  h1 {
-    font-size: 5em;
-    text-align: right;
-  }
 
   .cover {
-    div.persona p {
-      text-align: right;
+    padding: 0 20px;
+
+    div.persona {
+      flex-direction: row;
+
+      p {
+        text-align: right;
+      }
+      h1 {
+        font-size: 5em;
+        text-align: right;
+      }
     }
   }
 
-  div#external-links {
-    div:first-of-type div.circle {
-      margin-left: 0;
-    }
-
-    div:last-of-type div.circle {
-      margin-right: 0;
-    }
+  .footer, .push {
+    height: 90px;
   }
 }
 
@@ -351,11 +320,16 @@ body {
 @media (min-width: 992px) {
   .masthead,
   .mastfoot,
+  .cover,
   .cover-container {
     width: 800px;
   }
 
-  h1 {
-    font-size: 6em;
+  .cover {
+    div.persona {
+      h1 {
+        font-size: 6em;
+      }
+    }
   }
 }
