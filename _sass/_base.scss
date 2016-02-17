@@ -57,8 +57,8 @@ div.circle {
   margin: 0 auto;
   padding: 8px;
   padding-top: 57px;
-  min-height: calc(100% - 36px);
-  height: calc(100% - 36px);
+  min-height: calc(100% - 72px);
+  height: calc(100% - 72px);
   display: table;
 
   .cover-wrapper {
@@ -194,8 +194,40 @@ body {
   color: rgba(red($main-color), green($main-color), blue($main-color),.5);
 }
 
-.footer, .push {
-  height: 36px;
+.footer {
+  height: 72px;
+
+  & > div {
+    @extend %flexbox;
+    @include flex-direction(column);
+    @include flex-wrap(nowrap);
+    @include justify-content(space-around);
+    line-height: 20px;
+
+    a, a:hover, a:focus {
+      text-decoration: none;
+    }
+
+    #small-external-links {
+      font-size: 20px;
+    }
+
+    & > div {
+      @include flex-basis(1);
+      @include flex-grow(1);
+      text-align: center;
+      @include order(1);
+      margin-bottom: 4px;
+
+      &:first-child {
+        @include order(2);
+      }
+
+      &:last-child {
+        @include order(3);
+      }
+    }
+  }
 
   p {
     margin: 0;
@@ -203,9 +235,17 @@ body {
 }
 
 .masthead-brand {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.1;
   margin-top: 10px;
   margin-bottom: 10px;
   float: left;
+  @include no-selection;
+
+  &:hover, &:focus {
+    text-decoration: none;
+  }
 }
 
 .masthead-nav {
@@ -248,7 +288,7 @@ body {
 @include media-query(768px) {
   .masthead {
     position: relative;
-    border-bottom: None;
+    border-bottom: none;
     background-color: transparent;
   }
 
@@ -304,8 +344,27 @@ body {
     }
   }
 
-  .footer, .push {
+  .footer {
     height: 90px;
+
+    & > div {
+      @include flex-direction(row);
+      @include justify-content(space-between);
+
+      & > div {
+        @include order(2);
+
+        &:first-child {
+          text-align: left;
+          @include order(1);
+        }
+
+        &:last-child {
+          text-align: right;
+          @include order(3);
+        }
+      }
+    }
   }
 }
 
