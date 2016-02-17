@@ -39,8 +39,8 @@ div.circle {
   }
 
   i {
-    font-size: 4em;
-    line-height: 2.1em;
+    font-size: 4.5em;
+    line-height: 1.9em;
     color: $background-color;
     text-shadow: none; /* Prevent inheritence from `body` */
   }
@@ -102,8 +102,8 @@ div#external-links {
 
   a:hover, a:focus {
     & > div.circle {
-      background-color: rgba(red($main-color), green($main-color), blue($main-color),.75);
-      border: 1px solid rgba(red($main-color), green($main-color), blue($main-color),.75);
+      box-shadow: 0 0 20px 20px #FFFFFF;
+      background: darken($main-color, 3%);
     }
   }
 }
@@ -124,7 +124,6 @@ a:hover {
 .btn-default:hover,
 .btn-default:focus {
   color: $background-color;
-  text-shadow: none; /* Prevent inheritence from `body` */
   background-color: $main-color;
   border: 1px solid $main-color;
 }
@@ -142,7 +141,6 @@ body {
 body {
   color: $main-color;
   text-align: center;
-  text-shadow: 0 1px 3px rgba(0,0,0, $shadow-alpha);
   font-family: $base-font-family;
   font-weight: 300;
 }
@@ -294,6 +292,7 @@ body {
 
     div.persona {
       @include flex-direction(row);
+      text-shadow: 0 1px 3px rgba(0,0,0, $shadow-alpha);
 
       p {
         text-align: right;
