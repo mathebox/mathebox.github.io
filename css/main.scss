@@ -22,6 +22,15 @@ $circle-width-lg: 300px;
     }
 }
 
+@mixin no-selection() {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none;   /* Chrome/Safari/Opera */
+    -khtml-user-select: none;    /* Konqueror */
+    -moz-user-select: none;      /* Firefox */
+    -ms-user-select: none;       /* IE/Edge */
+    user-select: none;
+}
+
 @mixin box-shadow($horizontal, $vertical, $blur, $color, $inset:"") {
     -webkit-box-shadow: #{$inset} $horizontal $vertical $blur $color;
     -moz-box-shadow: #{$inset} $horizontal $vertical $blur $color;
@@ -88,6 +97,29 @@ $circle-width-lg: 300px;
     -webkit-justify-content: $value;
     -moz-justify-content: $value;
     justify-content: $value;
+}
+
+@mixin order($int) {
+    -webkit-box-ordinal-group: $int + 1;
+    -webkit-order: $int;
+    -moz-order: $int;
+    -ms-flex-order: $int;
+    order: $int;
+}
+
+@mixin flex-grow($int) {
+    -webkit-box-flex: $int;
+    -webkit-flex-grow: $int;
+    -moz-flex-grow: $int;
+    -ms-flex-positive: $int;
+    flex-grow: $int;
+}
+
+@mixin flex-basis($value) {
+    -webkit-flex-basis: $value;
+    -moz-flex-basis: $value;
+    -ms-flex-preferred-size: $value;
+    flex-basis: $value;
 }
 
 %flexbox { @include flexbox; }

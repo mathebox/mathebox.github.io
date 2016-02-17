@@ -1,5 +1,19 @@
 <div class="mastfoot footer">
     <div class="inner">
-        <p>Copyright {{ site.time | date: '%Y' }} by Max Bothe</p>
+        <div>
+            {% if page.url != '/' %}
+            <div id="small-external-links">
+                <a href="{{ '/' | prepend: site.baseurl }}"><i class="icon ion-android-globe"></i></a>
+                <a href="https://github.com/mathebox"><i class="icon ion-social-github"></i></a>
+                <a href="https://de.linkedin.com/in/maxbothe"><i class="icon ion-social-linkedin"></i></a>
+            </div>
+            {% endif %}
+        </div>
+        <div>
+            <p>Copyright {{ site.time | date: '%Y' }} by Max Bothe</p>
+        </div>
+        <div>
+            <a href="{{ 'imprint' | prepend: site.baseurl }}">imprint</a>
+        </div>
     </div>
 </div>
