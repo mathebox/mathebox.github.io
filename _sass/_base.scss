@@ -82,6 +82,18 @@ div.circle {
       font-size: 1.5em;
     }
   }
+
+  div.error404 {
+    h2 {
+      font-size: 9em;
+      font-weight: 100;
+    }
+
+    p {
+      font-size: 1.8em;
+      font-weight: 200;
+    }
+  }
 }
 
 div#external-links {
@@ -340,6 +352,16 @@ body {
       h1 {
         font-size: 5em;
         text-align: right;
+      }
+    }
+
+    div.error404 {
+      h2 {
+        font-size: 12em;
+      }
+
+      p {
+        font-size: 2em;
       }
     }
   }
