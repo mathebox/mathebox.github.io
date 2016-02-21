@@ -146,6 +146,14 @@ a:hover {
   border: 1px solid $main-color;
 }
 
+.panel-primary {
+  border-color: $main-color;
+  & > .panel-heading {
+    border-color: $main-color;
+    background-color: $main-color;
+  }
+}
+
 
 /*
  * Base structure
@@ -195,6 +203,7 @@ body {
 .cover,
 .cover-container {
   width: 100%;
+  margin: 0 auto;
 }
 
 .masthead {
