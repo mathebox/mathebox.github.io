@@ -46,6 +46,7 @@ div.circle {
   }
 
   img {
+    width: 300px;
     margin-top: -1px;
     margin-left: -1px;
     -webkit-clip-path: circle(calc(50% - 8px) at 50% 50%);
