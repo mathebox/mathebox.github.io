@@ -287,14 +287,14 @@ body {
       padding-left: 0;
       font-size: 16px;
       font-weight: bold;
-      color: mix($main-color, $background-color, 25%); /* IE8 proofing */
+      color: mix($main-color, $background-color, 75%); /* IE8 proofing */
       color: rgba(red($main-color), green($main-color), blue($main-color), .75);
       border-bottom: 2px solid transparent;
 
       &:hover, &:focus {
         background-color: transparent;
-        border-bottom-color: mix($main-color, $background-color, 75%);
-        border-bottom-color: rgba(red($main-color), green($main-color), blue($main-color),.25);
+        border-bottom-color: mix($main-color, $background-color, 25%); /* IE8 proofing */
+        border-bottom-color: rgba(red($main-color), green($main-color), blue($main-color), .25);
       }
     }
 
