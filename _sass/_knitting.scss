@@ -16,13 +16,39 @@
     margin: auto;
 }
 
+#letter-select {
+    margin-bottom: 16px;
+}
+
+.input-tab {
+    display: none;
+
+    &.active {
+        display: block;
+    }
+}
+
 *[id^='raphael-letter'] {
+    stroke: 0;
     fill: $main-color;
 }
 
 *[id^='raphael-text-light'] {
     fill: $background-color;
 }
+
+*[id^='raphael-text-dark'] {
+    fill: $main-color;
+}
+
+*[id^='raphael-spacer-light'] {
+    fill: $background-color;
+}
+
+*[id^='raphael-spacer-dark'] {
+    fill: $main-color;
+}
+
 
 @include media-query(768px) {
     #knitting {
