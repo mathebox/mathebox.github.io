@@ -18,6 +18,14 @@
 
 #letter-select {
     margin-bottom: 16px;
+    background-color: $main-color;
+    color: $background-color;
+    font-weight: 400;
+    text-indent: 45%;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: none;
 }
 
 .input-tab {
