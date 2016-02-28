@@ -60,12 +60,10 @@ div.circle {
   padding-top: 57px;
   min-height: calc(100% - 72px);
   height: calc(100% - 72px);
-  display: table;
-
-  .cover-wrapper {
-    display: table-cell;
-    vertical-align: middle;
-  }
+  @extend %flexbox;
+  @include flex-direction(column);
+  @include flex-wrap(wrap);
+  @include justify-content(space-around);
 
   div.persona {
     @extend %flexbox;
