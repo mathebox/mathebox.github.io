@@ -35,13 +35,4 @@ bower_components/bootstrap/less/
 bower_components/bootstrap/nuget/
 bower_components/bootstrap/package.js
 bower_components/bootstrap/package.json
-bower_components/jquery/.bower.json
-bower_components/jquery/AUTHORS.txt
-bower_components/jquery/README.md
-bower_components/jquery/bower.json
-bower_components/jquery/dist/jquery.js
-bower_components/jquery/dist/jquery.min.map
-bower_components/jquery/src/
-bower_components/raphael/.bower.json
-bower_components/raphael/dev/
-bower_components/raphael/raphael.js
+bower_components/jquery/

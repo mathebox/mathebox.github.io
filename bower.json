@@ -17,7 +17,6 @@
   ],
   "dependencies": {
     "bootstrap": "^3.3.6",
-    "raphael": "^2.1.4",
     "Ionicons": "ionicons#^2.0.1"
   }
 }
