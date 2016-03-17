@@ -28,6 +28,7 @@ div.circle {
   border-radius: 50%;
   background-color: $main-color;
   border: 1px solid $main-color;
+  text-align: center;
   @include box-shadow(0, 1px, 3px, rgba(0,0,0, $shadow-alpha));
 
   &.circle-large {
@@ -156,7 +157,6 @@ body {
 }
 body {
   color: $main-color;
-  text-align: center;
   font-family: $base-font-family;
   font-weight: 300;
 }
