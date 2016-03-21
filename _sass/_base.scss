@@ -56,15 +56,14 @@ div.circle {
 }
 
 .cover {
+  display: inline-block;
   margin: 0 auto;
   padding: 8px;
   padding-top: 57px;
-  min-height: calc(100% - 72px);
-  height: calc(100% - 72px);
-  @extend %flexbox;
-  @include flex-direction(column);
-  @include flex-wrap(wrap);
-  @include justify-content(space-around);
+
+  $cover-height: calc(100% - 72px);
+  min-height: $cover-height;
+  height: $cover-height;
 
   div.persona {
     @extend %flexbox;
@@ -201,7 +200,17 @@ body {
   border-bottom: 1px solid #ccc;
   background-color: #f6f6f6;
   z-index: 20;
+  height: 51px;
 }
+
+.full-flex-container {
+  height: 100%;
+  @extend %flexbox;
+  @include flex-direction(column);
+  @include flex-wrap(wrap);
+  @include justify-content(space-around);
+}
+
 
 /*
  * Header
@@ -252,12 +261,12 @@ body {
 }
 
 .masthead-brand {
+  display: block;
   font-size: 24px;
   font-weight: 500;
   line-height: 1.1;
   margin-top: 10px;
   margin-bottom: 10px;
-  float: left;
   @include no-selection;
 
   &:hover, &:focus {
@@ -307,10 +316,11 @@ body {
     position: relative;
     border-bottom: none;
     background-color: transparent;
+    height: 66px;
   }
 
   .inner {
-    padding: 30px;
+    padding: 20px;
   }
   /* Start the vertical centering */
   .site-wrapper-inner {
@@ -322,6 +332,10 @@ body {
   .cover,
   .cover-container {
     width: 700px; /* Must be percentage or pixels for horizontal alignment */
+  }
+
+  .masthead-brand {
+    margin: 0;
   }
 
   .masthead-nav {
@@ -344,8 +358,10 @@ body {
 
   .cover {
     padding: 0 20px;
-    min-height: calc(100% - 166px);
-    height: calc(100% - 166px);
+
+    $cover-height: calc(100% - 131px);
+    min-height: $cover-height;
+    height: $cover-height;
 
     div.persona {
       @include flex-direction(row);
@@ -372,7 +388,7 @@ body {
   }
 
   .footer {
-    height: 90px;
+    height: 64px;
 
     & > div {
       @include flex-direction(row);
