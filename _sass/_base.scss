@@ -19,6 +19,15 @@ ul, ol, dl, figure,
     }
 }
 
+.affix {
+  top: 16px;
+}
+
+.no-margin-padding {
+  margin: 0;
+  padding: 0;
+}
+
 
 div.circle {
   width: $circle-width-md;

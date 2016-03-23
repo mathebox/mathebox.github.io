@@ -1,0 +1,18 @@
+---
+layout: default
+---
+<div class="container-fluid no-margin-padding">
+    <div class="row">
+        <div class="col-md-10">
+            <h1 data-toc-skip>{{ page.title }}</h1>
+            {{ content }}
+        </div>
+        <div class="col-md-2 hidden-xs hidden-sm hidden-print">
+            <nav id="toc" data-toggle="toc" data-spy="affix" data-offset-top="50"></nav>
+        </div>
+    </div>
+</div>
+
+<script src="{{ '/bower_components/jquery/dist/jquery.min.js' | prepend: site.baseurl }}"></script>
+<script src="{{ '/bower_components/bootstrap/dist/js/bootstrap.min.js' | prepend: site.baseurl }}"></script>
+<script src="{{ '/static/js/bootstrap-toc.min.js' | prepend: site.baseurl }}"></script>
