@@ -55,8 +55,6 @@ ul, ol, dl, figure,
 }
 
 
-
-
 div.circle {
   width: $circle-width-md;
   height: $circle-width-md;
@@ -158,6 +156,10 @@ div#external-links {
       background: darken($main-color, 3%);
     }
   }
+}
+
+img#address {
+  width: 170px;
 }
 
 /*
