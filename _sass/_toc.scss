@@ -4,19 +4,20 @@
  * Licensed under MIT (https://github.com/afeld/bootstrap-toc/blob/gh-pages/LICENSE.md) */
 
 /* modified from https://github.com/twbs/bootstrap/blob/94b4076dd2efba9af71f0b18d4ee4b163aa9e0dd/docs/assets/css/src/docs.css#L548-L601 */
-/* modified by mathebox for custom color support */
+/* modified by mathebox for custom color support and smaller paddings */
 
 /* All levels of nav */
 nav[data-toggle='toc'] .nav > li > a {
   display: block;
-  padding: 4px 20px;
+  padding: 4px 12px;
   font-size: 13px;
   font-weight: 500;
   color: mix($main-color, $background-color, 50%);
+  padding-right: 0px;
 }
 nav[data-toggle='toc'] .nav > li > a:hover,
 nav[data-toggle='toc'] .nav > li > a:focus {
-  padding-left: 19px;
+  padding-left: 11px;
   color: $main-color;
   text-decoration: none;
   background-color: transparent;
@@ -25,7 +26,7 @@ nav[data-toggle='toc'] .nav > li > a:focus {
 nav[data-toggle='toc'] .nav > .active > a,
 nav[data-toggle='toc'] .nav > .active:hover > a,
 nav[data-toggle='toc'] .nav > .active:focus > a {
-  padding-left: 18px;
+  padding-left: 10px;
   font-weight: 500;
   color: $main-color;
   background-color: transparent;
