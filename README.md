@@ -4,5 +4,5 @@ Personal website. Visit [mathebox.github.io](http://mathebox.github.io).
 * Install [jekyll](http://jekyllrb.com).
 * Install bower components via `bower install`
 * Compile locally via `jekyll serve`
-* Visit website on [locahost:4000](http://localhost:4000/)
+* Visit website on [localhost:4000](http://localhost:4000/)
 * Remove unused files of bower components via `./bower-cleanup.sh`
