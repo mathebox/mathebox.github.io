@@ -28,6 +28,30 @@ ul, ol, dl, figure,
   padding: 0;
 }
 
+.navbar-brand {
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.navbar-default {
+  margin-bottom: 8px;
+
+  .navbar-brand, .navbar-brand:hover {
+    color: $main-color;
+  }
+
+  .navbar-nav > li > a {
+    color: $main-color;
+  }
+}
+
+.navbar-nav > li > a {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+
+
 
 div.circle {
   width: $circle-width-md;
@@ -67,8 +91,7 @@ div.circle {
 .cover {
   display: inline-block;
   margin: 0 auto;
-  padding: 8px;
-  padding-top: 57px;
+  padding: 0 8px;
 
   $cover-height: calc(100% - 72px);
   min-height: $cover-height;
@@ -196,20 +219,11 @@ body {
 }
 
 
-.masthead,
 .mastfoot,
 .cover,
 .cover-container {
   width: 100%;
   margin: 0 auto;
-}
-
-.masthead {
-  position: fixed;
-  border-bottom: 1px solid #ccc;
-  background-color: #f6f6f6;
-  z-index: 20;
-  height: 51px;
 }
 
 .full-flex-container {
@@ -269,63 +283,22 @@ body {
   }
 }
 
-.masthead-brand {
-  display: block;
-  font-size: 24px;
-  font-weight: 500;
-  line-height: 1.1;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  @include no-selection;
-
-  &:hover, &:focus {
-    text-decoration: none;
-  }
-}
-
-.masthead-nav {
-  float: right;
-  margin-top: 4px;
-
-  & > li {
-    display: inline-block;
-
-    a {
-      padding-right: 0;
-      padding-left: 0;
-      font-size: 16px;
-      font-weight: bold;
-      color: mix($main-color, $background-color, 75%); /* IE8 proofing */
-      color: rgba(red($main-color), green($main-color), blue($main-color), .75);
-      border-bottom: 2px solid transparent;
-
-      &:hover, &:focus {
-        background-color: transparent;
-        border-bottom-color: mix($main-color, $background-color, 25%); /* IE8 proofing */
-        border-bottom-color: rgba(red($main-color), green($main-color), blue($main-color), .25);
-      }
-    }
-
-    & > .active {
-      a, a:hover, a:focus {
-        color: $main-color;
-        border-bottom-color: $main-color;
-      }
-    }
-  }
-
-  & > li + li {
-    margin-left: 20px;
-  }
-}
-
 // sm
 @include media-query(768px) {
-  .masthead {
-    position: relative;
-    border-bottom: none;
+  .navbar-default {
     background-color: transparent;
-    height: 66px;
+    border: 0;
+  }
+
+  .navbar>.container-fluid .navbar-brand {
+    margin-left: -8px;
+  }
+
+  .navbar-nav {
+    li > a {
+      padding-right: 8px;
+      padding-left: 8px;
+    }
   }
 
   .inner {
@@ -336,19 +309,10 @@ body {
     vertical-align: middle;
   }
   /* Handle the widths */
-  .masthead,
   .mastfoot,
   .cover,
   .cover-container {
     width: 700px; /* Must be percentage or pixels for horizontal alignment */
-  }
-
-  .masthead-brand {
-    margin: 0;
-  }
-
-  .masthead-nav {
-    margin-top: 2px;
   }
 
   div.circle.circle-large {
@@ -364,11 +328,10 @@ body {
     }
   }
 
-
   .cover {
     padding: 0 20px;
 
-    $cover-height: calc(100% - 131px);
+    $cover-height: calc(100% - 134px);
     min-height: $cover-height;
     height: $cover-height;
 
@@ -422,7 +385,6 @@ body {
 
 // md
 @include media-query(992px) {
-  .masthead,
   .mastfoot,
   .cover,
   .cover-container {
