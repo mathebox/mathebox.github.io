@@ -38,6 +38,9 @@ ul, ol, dl, figure,
 }
 
 .navbar-default {
+  position: absolute;
+  width: 100%;
+  z-index: 50;
   margin-bottom: 8px;
 
   .navbar-brand, .navbar-brand:hover {
@@ -94,6 +97,7 @@ div.circle {
   display: inline-block;
   margin: 0 auto;
   padding: 0 8px;
+  padding-top: 59px;
 
   $cover-height: calc(100% - 72px);
   min-height: $cover-height;
@@ -293,6 +297,7 @@ body {
 // sm
 @include media-query(768px) {
   .navbar-default {
+    position: inherit;
     background-color: transparent;
     border: 0;
   }
