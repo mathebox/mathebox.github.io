@@ -195,12 +195,12 @@ a:hover {
 html,
 body {
   height: 100%;
-  background-color: $background-color;
 }
 body {
   color: $main-color;
   font-family: $base-font-family;
   font-weight: 300;
+  background-color: $background-color;
 }
 
 /* Extra markup and styles for table-esque vertical and horizontal centering */
@@ -292,6 +292,22 @@ body {
   p {
     margin: 0;
   }
+}
+
+.background-artifact {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    height: 630px;
+    width: 1000px;
+    background: url(/static/img/graph.svg);
+    background-repeat: no-repeat;
+    transform: translate(-100px, 90px);
+    z-index: -1;
+
+    svg path {
+        fill: black;
+    }
 }
 
 // sm
