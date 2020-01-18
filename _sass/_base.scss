@@ -49,7 +49,8 @@ ul, ol, dl, figure,
 }
 
 .header {
-  height: 50px;
+  height: 28px;
+  padding: 16px 0;
 }
 
 .navbar-brand {
@@ -130,7 +131,7 @@ a:active {
   display: inline-block;
   margin: 0 auto;
 
-  $cover-height: calc(100% - 134px);
+  $cover-height: calc(100% - 144px);
   min-height: $cover-height;
   height: $cover-height;
 
@@ -341,7 +342,7 @@ body {
   }
 
   .cover {
-    $cover-height: calc(100% - 106px);
+    $cover-height: calc(100% - 116px);
     min-height: $cover-height;
     height: $cover-height;
 
