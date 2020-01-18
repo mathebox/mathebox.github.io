@@ -9,9 +9,10 @@
 title: max bothe
 email: mathebox@gmail.com
 description: ""
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://yourdomain.com" # the base hostname & protocol for your site
 github_username:  mathebox
 
 # Build settings
 markdown: kramdown
+
+sass:
+  style: compressed
