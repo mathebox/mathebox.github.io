@@ -3,13 +3,10 @@
   --main-color: #2E679A;
   --background-color: #EFEEEE;
   --border-color: rgba(255,255,255,0.20);
-  --border-color-indent: rgba(217,210,200,0.1);
   --dark-shadow-color: rgba(217,210,200,0.51);
   --light-shadow-color: rgba(255,255,255,0.83);
   --dark-shadow-color-raised: rgba(217,210,200,0.8);
   --light-shadow-color-raised: rgba(255,255,255,0.99999);
-  --dark-shadow-color-inset: rgba(255,255,255,0.83);
-  --light-shadow-color-inset: rgba(217,210,200,0.71);
 }
 
 @media screen and (prefers-color-scheme: dark) {
@@ -17,13 +14,10 @@
     --main-color: #6398E6;
     --background-color: #2c2c2eff;
     --border-color: rgba(35,35,35,0.10);
-    --border-color-indent: rgba(0,0,0,0.05);
     --dark-shadow-color: rgba(0,0,0,0.4);
     --light-shadow-color: rgba(77,74,70,0.51);
     --dark-shadow-color-raised: rgba(0,0,0,0.5);
     --light-shadow-color-raised: rgba(77,74,70,0.61);
-    --dark-shadow-color-inset: rgba(77,74,70,0.51);
-    --light-shadow-color-inset: rgba(0,0,0,0.5);
   }
 }
 
@@ -118,8 +112,12 @@ a:hover, a:focus {
 
 a:active {
   & > div.item {
-    box-shadow: inset -4px -4px 13px 0 var(--dark-shadow-color-inset), inset 4px 4px 8px 0 var(--light-shadow-color-inset);
-    border: 1px solid var(--border-color-indent);
+    box-shadow:
+      -4px -4px 13px 0 var(--dark-shadow-color),
+      4px 4px 8px 0 var(--light-shadow-color),
+      inset -4px -4px 13px 0 var(--light-shadow-color),
+      inset 4px 4px 8px 0 var(--dark-shadow-color);
+    border: none;
 
     svg {
       transform: scale(0.98) translateY(-50%);
