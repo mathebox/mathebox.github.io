@@ -265,6 +265,8 @@ body {
 
 .footer {
   padding: 16px 0;
+  font-size: 12px;
+  font-weight: 500;
 
   & > div {
     @extend %flexbox;
@@ -346,12 +348,11 @@ body {
 
     div.persona {
       @include flex-direction(row);
-      text-shadow: 0 1px 3px rgba(0,0,0, $shadow-alpha);
 
       p {
         text-align: right;
         line-height: 20px;
-        font-weight: 250;
+        font-weight: 400;
         font-size: 1.4em;
       }
 
@@ -361,6 +362,7 @@ body {
         font-weight: 450;
         line-height: 90px;
         letter-spacing: 2px;
+        text-shadow: 0 1px 3px rgba(0,0,0, $shadow-alpha);
       }
 
       div + div {
