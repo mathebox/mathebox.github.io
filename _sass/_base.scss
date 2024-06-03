@@ -67,7 +67,8 @@ div.circle {
   box-shadow: 8px 8px 15px -3px rgba(0, 0, 0, 0.2), 4px 4px 6px -2px rgba(0, 0, 0, 0.10);
 
   img {
-    width: 300px;
+    width: $circle-width-lg;
+    height: $circle-width-lg;
     margin-top: -1px;
     margin-left: -1px;
     -webkit-clip-path: circle(calc(50% - 8px) at 50% 50%);
