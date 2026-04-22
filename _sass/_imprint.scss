@@ -1,0 +1,14 @@
+div.text-small > p {
+    font-size: 14px;
+    line-height: 1.5em;
+}
+
+div#address {
+    height: 56px;
+    width: 100%;
+    background: url("/static/img/address-light.svg") no-repeat;
+
+    @media screen and (prefers-color-scheme: dark) {
+        background-image: url("/static/img/address-dark.svg");
+    }
+}

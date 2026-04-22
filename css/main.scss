@@ -4,15 +4,13 @@
 @charset "utf-8";
 
 $base-font-family: Iowan Old Style, Apple Garamond, Baskerville, Times New Roman, Droid Serif, Times, Source Serif Pro, serif;
-$spacing-unit:     30px;
 
+$external-button-width: 100px;
+$circle-width: 300px;
+$circle-border-width: 8px;
 
-$main-color:        #046D8B;
-$background-color:  #F6F6F6;
-$shadow-alpha:      0.15;
-
-$circle-width-md: 120px;
-$circle-width-lg: 300px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
 
 
 @mixin media-query($device) {
@@ -21,107 +19,8 @@ $circle-width-lg: 300px;
     }
 }
 
-@mixin no-selection() {
-    -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none;   /* Chrome/Safari/Opera */
-    -khtml-user-select: none;    /* Konqueror */
-    -moz-user-select: none;      /* Firefox */
-    -ms-user-select: none;       /* IE/Edge */
-    user-select: none;
-}
-
-@mixin box-shadow($horizontal, $vertical, $blur, $color, $inset:"") {
-    -webkit-box-shadow: #{$inset} $horizontal $vertical $blur $color;
-    -moz-box-shadow: #{$inset} $horizontal $vertical $blur $color;
-    box-shadow: #{$inset} $horizontal $vertical $blur $color;
-}
-
-@mixin flexbox {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -moz-flex;
-    display: -ms-flexbox;
-    display: flex;
-}
-
-@mixin flex-direction($value) {
-    @if $value == row-reverse {
-        -webkit-box-direction: reverse;
-        -webkit-box-orient: horizontal;
-    } @else if $value == column {
-        -webkit-box-direction: normal;
-        -webkit-box-orient: vertical;
-    } @else if $value == column-reverse {
-        -webkit-box-direction: reverse;
-        -webkit-box-orient: vertical;
-    } @else {
-        -webkit-box-direction: normal;
-        -webkit-box-orient: horizontal;
-    }
-    -webkit-flex-direction: $value;
-    -moz-flex-direction: $value;
-    -ms-flex-direction: $value;
-    flex-direction: $value;
-}
-
-
-@mixin flex-wrap($value) {
-    // No Webkit Box fallback.
-    -webkit-flex-wrap: $value;
-    -moz-flex-wrap: $value;
-    @if $value == nowrap {
-        -ms-flex-wrap: none;
-    } @else {
-        -ms-flex-wrap: $value;
-    }
-    flex-wrap: $value;
-}
-
-@mixin justify-content($value) {
-    @if $value == flex-start {
-        -webkit-box-pack: start;
-        -ms-flex-pack: start;
-    } @else if $value == flex-end {
-        -webkit-box-pack: end;
-        -ms-flex-pack: end;
-    } @else if $value == space-between {
-        -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-    } @else if $value == space-around {
-        -ms-flex-pack: distribute;
-    } @else {
-        -webkit-box-pack: $value;
-        -ms-flex-pack: $value;
-    }
-    -webkit-justify-content: $value;
-    -moz-justify-content: $value;
-    justify-content: $value;
-}
-
-@mixin order($int) {
-    -webkit-box-ordinal-group: $int + 1;
-    -webkit-order: $int;
-    -moz-order: $int;
-    -ms-flex-order: $int;
-    order: $int;
-}
-
-@mixin flex-grow($int) {
-    -webkit-box-flex: $int;
-    -webkit-flex-grow: $int;
-    -moz-flex-grow: $int;
-    -ms-flex-positive: $int;
-    flex-grow: $int;
-}
-
-@mixin flex-basis($value) {
-    -webkit-flex-basis: $value;
-    -moz-flex-basis: $value;
-    -ms-flex-preferred-size: $value;
-    flex-basis: $value;
-}
-
-%flexbox { @include flexbox; }
-
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import "base";
+@import "index";
+@import "imprint";
+@import "error";
